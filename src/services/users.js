@@ -18,6 +18,15 @@ class UserService {
             message: "User created successfully!"
         }
     }
+
+    async getUsers(req, res, next) {
+        let resData = await pool.query(`select id, username, age from users`)
+
+        return {
+            status: 200,
+            data: resData.rows
+        }
+    }
 }
 
 let userService = new UserService

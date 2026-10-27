@@ -7,4 +7,4 @@ let app = express()
 app.use(express.json())
 app.use(mainRouter)
 
-app.listen(process.env.PORT, console.log("Server is running..."))
+app.listen(process.env.PORT, console.log(`Backend server is running on ${process.env.PORT}`))
